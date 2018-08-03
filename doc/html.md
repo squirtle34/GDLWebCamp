@@ -1,4 +1,4 @@
-[HTML5 Boilerplate homepage](https://html5boilerplate.com/) | [Documentation
+[HTML5 Boilerplate homepage](https://html5boilerplate.com) | [Documentation
 table of contents](TOC.md)
 
 # The HTML
@@ -13,7 +13,7 @@ By default, HTML5 Boilerplate provides two `html` pages:
 ## `index.html`
 
 
-### The `no-js` Class
+### The `no-js` class
 
 The `no-js` class is provided in order to allow you to more easily and
 explicitly add custom styles based on whether JavaScript is disabled
@@ -21,10 +21,10 @@ explicitly add custom styles based on whether JavaScript is disabled
 FOUC](https://www.paulirish.com/2009/avoiding-the-fouc-v3/).
 
 
-## Language Attribute
+## Language attribute
 
-Please consider specifying the language of your content by adding a [value](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) to the `lang`
-attribute in the `<html>` as in this example:
+Please consider specifying the language of your content by adding the `lang`
+attribute to `<html>` as in this example:
 
 ```html
 <html class="no-js" lang="en">
@@ -92,24 +92,13 @@ the HTTP header. If you are using a different server, check out our [other
 server config](https://github.com/h5bp/server-configs).
 
 Starting with Internet Explorer 11, [document modes are
-deprecated](https://msdn.microsoft.com/library/bg182625.aspx#docmode).
+deprecated](https://msdn.microsoft.com/en-us/library/ie/bg182625.aspx#docmode).
 If your business still relies on older web apps and services that were
 designed for older versions of Internet Explorer, you might want to consider
-enabling [Enterprise Mode](https://blogs.msdn.microsoft.com/ie/2014/04/02/stay-up-to-date-with-enterprise-mode-for-internet-explorer-11/) throughout your company.
+enabling [Enterprise Mode](http://blogs.msdn.com/b/ie/archive/2014/04/02/stay-up-to-date-with-enterprise-mode-for-internet-explorer-11.aspx) throughout your company.
 
 
-## Meta Description
-
-The `description` meta tag provides a short description of the page. 
-In some situations this description is used as a part of the snippet 
-shown in the search results.
-
-```html
-<meta name="description" content="This is a description">
-```
-
-
-## Mobile Viewport
+## Mobile viewport
 
 There are a few different options that you can use with the [`viewport` meta
 tag](https://docs.google.com/present/view?id=dkx3qtm_22dxsrgcf4 "Viewport and
@@ -121,33 +110,61 @@ HTML5 Boilerplate comes with a simple setup that strikes a good balance for gene
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-## Web App Manifest
-HTML5 Boilerplate includes a simple web app manifest file. 
-
-The web app manifest is a simple JSON file that allows you to control how your 
-app appears on a device's home screen, what it looks like when it launches
-in that context and what happens when it is launched. This allows for much greater
-control over the UI of a saved site or web app on a mobile device. 
-
-It's linked to from the HTML as follows:
-
-```html
-        <link rel="manifest" href="site.webmanifest">
-```
-Our [site.webmanifest](https://github.com/h5bp/html5-boilerplate/blob/master/src/site.webmanifest) contains a very skeletal "app" definition, just to show the basic usage. 
-You should fill this file out with [more information about your site or application](https://developer.mozilla.org/en-US/docs/Web/Manifest)
-
 ## Favicons and Touch Icon
 
-The shortcut icons should be put in the root directory of your site. `favicon.ico` 
-is automatically picked up by browsers if it's placed in the root.  HTML5
+The shortcut icons should be put in the root directory of your site. HTML5
 Boilerplate comes with a default set of icons (include favicon and one Apple
 Touch Icon) that you can use as a baseline to create your own.
 
 Please refer to the more detailed description in the [Extend section](extend.md)
 of these docs.
 
-## The Content Area
+## Modernizr
+
+HTML5 Boilerplate uses a custom build of Modernizr.
+
+[Modernizr](http://modernizr.com) is a JavaScript library which adds classes to
+the `html` element based on the results of feature test and which ensures that
+all browsers can make use of HTML5 elements (as it includes the HTML5 Shiv).
+This allows you to target parts of your CSS and JavaScript based on the
+features supported by a browser.
+
+In general, in order to keep page load times to a minimum, it's best to call
+any JavaScript at the end of the page because if a script is slow to load
+from an external server it may cause the whole page to hang. That said, the
+Modernizr script *needs* to run *before* the browser begins rendering the page,
+so that browsers lacking support for some of the new HTML5 elements are able to
+handle them properly. Therefore the Modernizr script is the only JavaScript
+file synchronously loaded at the top of the document.
+
+## What about polyfills?
+
+If you need to include [polyfills](https://remysharp.com/2010/10/08/what-is-a-polyfill)
+in your project, you must make sure those load before any other JavaScript. If you're
+using some polyfill CDN service, like [cdn.polyfill.io](https://cdn.polyfill.io/),
+just put it before the other scripts in the bottom of the page:
+
+```html
+    <script src="https://cdn.polyfill.io/v1/polyfill.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+```
+
+If you like to just include the polyfills yourself, you could include them in
+`js/plugins.js`. When you have a bunch of polyfills to load in, you could
+also create a `polyfills.js` file in the `js/vendor` directory. Also using
+this technique, make sure the polyfills are all loaded before any other
+Javascript.
+
+There are some misconceptions about Modernizr and polyfills. It's important
+to understand that Modernizr just handles feature checking, not polyfilling
+itself. The only thing Modernizr does regarding polyfills is that the team
+maintains [a huge list of cross Browser polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills).
+
+## The content area
 
 The central part of the boilerplate template is pretty much empty. This is
 intentional, in order to make the boilerplate suitable for both web page and
@@ -156,49 +173,8 @@ web app development.
 ### Browser Upgrade Prompt
 
 The main content area of the boilerplate includes a prompt to install an up to
-date browser for users of IE 8 and lower. If you intended to support IE 8, then you
+date browser for users of IE 6/7. If you intended to support IE 6/7, then you
 should remove the snippet of code.
-
-## Modernizr
-
-HTML5 Boilerplate uses a custom build of Modernizr.
-
-[Modernizr](https://modernizr.com/) is a JavaScript library which adds classes to
-the `html` element based on the results of feature test and which ensures that
-all browsers can make use of HTML5 elements (as it includes the HTML5 Shiv).
-This allows you to target parts of your CSS and JavaScript based on the
-features supported by a browser.
-
-Starting with version 3 Modernizr can be customized using the [modernizr-config.json](https://github.com/h5bp/html5-boilerplate/blob/master/modernizr-config.json) and the
-[Modernizr command line utility](https://www.npmjs.com/package/modernizr-cli). 
-
-## What About Polyfills?
-
-If you need to include [polyfills](https://remysharp.com/2010/10/08/what-is-a-polyfill)
-in your project, you must make sure those load before any other JavaScript. If you're
-using some polyfill CDN service, like [cdn.polyfill.io](https://cdn.polyfill.io/),
-just put it before the other scripts in the bottom of the page:
-
-```html
-    <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-</body>
-```
-
-If you like to just include the polyfills yourself, you could include them in
-`js/plugins.js`. When you have a bunch of polyfills to load in, you could
-also create a `polyfills.js` file in the `js/vendor` directory or include the files 
-individually and combine them using a build tool. Always ensure that the polyfills 
-are all loaded before any other JavaScript.
-
-There are some misconceptions about Modernizr and polyfills. It's important
-to understand that Modernizr just handles feature checking, not polyfilling
-itself. The only thing Modernizr does regarding polyfills is that the team
-maintains [a huge list of cross Browser polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills).
 
 ### jQuery CDN for jQuery
 
@@ -222,7 +198,8 @@ being able to serve jQuery to Chinese users.
 While the jQuery CDN is a strong default solution your site or application may
 require a different configuration. Testing your site with services like
 [WebPageTest](https://www.webpagetest.org/) and browser tools like
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) will help you examine the real
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) or
+[YSlow](https://developer.yahoo.com/yslow/) will help you examine the real
 world performance of your site and can show where you can optimize your specific
 site or application.
 

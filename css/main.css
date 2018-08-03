@@ -1,4 +1,4 @@
-/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -11,29 +11,27 @@
    ========================================================================== */
 
 html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
 }
 
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
  *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
+ * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
 /*
@@ -41,12 +39,12 @@ html {
  */
 
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
 
 /*
@@ -55,8 +53,13 @@ hr {
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
 
-audio, canvas, iframe, img, svg, video {
-  vertical-align: middle;
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
 }
 
 /*
@@ -64,9 +67,9 @@ audio, canvas, iframe, img, svg, video {
  */
 
 fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /*
@@ -74,7 +77,7 @@ fieldset {
  */
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 /* ==========================================================================
@@ -82,10 +85,10 @@ textarea {
    ========================================================================== */
 
 .browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
 /* ==========================================================================
@@ -95,91 +98,76 @@ textarea {
 html {
   box-sizing: border-box;
 }
-
-*, *:before, *:after {
+*,*:before,*:after {
   box-sizing: inherit;
 }
-
 body {
   background-color: #f2f2f2;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
-
-/**globales**/
-
+/** Globales **/
 .contenedor {
   width: 98%;
-  margin: 0 auto;
+  margin:0 auto;
 }
-
 @media only screen and (min-width:480px) {
   .contenedor {
     width: 95%;
   }
 }
-
 @media only screen and (min-width:768px) {
   .contenedor {
     width: 90%;
   }
 }
-
 @media only screen and (min-width:992px) {
   .contenedor {
     width: 90%;
     max-width: 1100px;
   }
 }
-
 .seccion {
   padding: 30px 0;
 }
-
 .seccion p {
   font-size: 1.2em;
   text-align: center;
 }
-
 h2 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2.4em;
-  text-transform: uppercase;
-  text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.4em;
+    text-transform: uppercase;
+    text-align: center;
 }
-
 h2::after {
   content: '';
   margin: 0 auto;
   background-image: url(../img/separador.png);
   height: 30px;
-  width: 100%;
+  width: 100px;
   display: block;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
-
 h3 {
   font-size: 1.8em;
   color: #fe4918;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   margin: 0;
 }
-
 .button {
   background-color: #fe4918;
   padding: 10px 40px;
   color: #ffffff;
   text-transform: uppercase;
   font-weight: bold;
-  text-decoration: none;
-  font-size: 1em;
-  margin-top: 20px;
-  display: inline-block;
-  transition: all .3s ease;
-  border: 2px solid #fe4918;
+   font-family: 'Oswald', sans-serif;
+   text-decoration: none;
+   font-size: 1em;
+   margin-top: 20px;
+   display: inline-block;
+   transition: all .3s ease;
+   border: 2px solid #fe4918;
 }
-
-.button.hollow
+.button.hollow,
 .button.hollow:hover {
   background-color: white;
   color: #fe4918;
@@ -191,18 +179,56 @@ h3 {
 .button.transparente:hover {
   border: 2px solid #fe4918;
 }
+
 ul {
   list-style: none;
-  margin: 0;
+  margin:0;
   padding: 0;
 }
-
 .button:hover {
   background-color: #e33000;
 }
-
 .float-right {
   float: right;
+}
+/** Lettering**/
+h1.nombre-sitio span {
+  position: relative;
+  text-shadow: 0 0 30px black;
+}
+
+@media only screen and (min-width: 992px){
+  .char1 {
+        top: 20px; right:20px;
+  }
+  .char2 {
+        top:0px; left:-20px;
+  }
+  .char3 {
+    top:10px; right:20px;
+  }
+  .char4 {
+    top:5px; right:10px;
+  }
+  .char5 {
+    top:15px; right:10px;
+  }
+  .char6 {
+    top:5px; left:10px;
+  }
+  .char7 {
+    top:20px; left:-10px;
+  }
+  .char8 {
+    top:0; left: 10px;
+  }
+  .char9 {
+    top:10px;    right: 20px;
+  }
+  .char10 {
+      top: 20px; right: 20px; 
+  } 
+
 }
 
 /** Header **/
@@ -213,150 +239,125 @@ div.hero {
   background-position: top center;
   background-size: cover;
 }
-
 div.contenido-header {
   padding-top: 40px;
 }
-
 @media only screen and (min-width:768px) {
   div.contenido-header {
     padding-top: 10px;
   }
 }
-
 nav.redes-sociales {
   text-align: center;
 }
-
 nav.redes-sociales a {
   color: #ffffff;
   font-size: 2em;
   margin-right: 20px;
 }
-
-nav.redes-sociales a:last-child {
+nav.redes-sociales a:last-child{
   margin-right: 0;
 }
-
 div.informacion-evento {
   text-align: center;
   color: #ffffff;
 }
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px) {
   div.informacion-evento {
     width: 70%;
-    margin: 0 auto;
+    margin:0 auto;
     margin-top: 50px;
   }
 }
-
 div.informacion-evento p {
-  margin: 0;
+  margin:0;
   display: inline;
   font-size: 20px;
   text-transform: uppercase;
 }
-
 div.informacion-evento p i {
-  color: red;
-  font-size: 2rem;
+  color: #fe4918;
+  font-size: 2.4rem;
 }
-
 p.fecha {
   float: left;
 }
-
 p.ciudad {
   float: right;
   text-align: right;
 }
-
 p.slogan {
-  text-transform: none !important;
-  color: #ffffff;
+  text-transform: none!important;
 }
-
 p.slogan span {
   font-weight: bold;
 }
-
 h1.nombre-sitio {
-  font-size: 5.5vw;
+  font-size: 5.9vw;
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
+  font-family: 'PT Sans', sans-serif;
 }
-
 @media only screen and (min-width:768px) {
   h1.nombre-sitio {
-    font-size: 7vw;
+    font-size: 11.5vw;
     margin: 0;
+    line-height: 1;
   }
 }
-
-/**barra**/
-
+/** Barra **/
 div.barra {
   background-color: #353535;
   padding: 20px 0;
 }
-
-div.logo {
+.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+div.logo{
   width: 80%;
   float: left;
 }
-
 div.logo img {
   width: 100%;
 }
-
-@media only screen and (min-width:786px) {
+@media only screen and (min-width:768px) {
   div.logo {
-    width: 33%;
+    width:33%;
+
   }
 }
-
-/**navegacion principal**/
-
+/** Nav principal **/
 nav.navegacion-principal {
   display: none;
-  clear: both;
-}
-
-@media only screen and (min-width: 768px) {
-  nav.navegacion-principal {
-    clear: unset;
-  }
-}
-
-nav.navegacion-principal a {
-  font-family: 'Oswald', sans-serif;
-  color: hsla(360, 100%, 100%, 1);
-  font-size: 1.3em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all .6s ease;
   width: 100%;
-  display: block;
-  text-align: center;
-  margin-bottom: 20px;
 }
-
+nav.navegacion-principal a {
+   font-family: 'Oswald', sans-serif;
+   color: #ffffff;
+   font-size: 1.3em;
+   text-transform: uppercase;
+   text-decoration: none;
+   transition: all .6s ease;
+   width: 100%;
+   display: block;
+   text-align: center;
+   margin-bottom: 20px;
+   clear: both;
+}
 nav.navegacion-principal a:hover {
-  background-color: hsla(13, 93%, 58%, 1);
-  color: hsla(360, 100%, 100%, 1);
+  background-color: #fe4918;
 }
-
 nav.navegacion-principal a:last-child {
-  border: 2px solid hsla(13, 93%, 58%, 1);
+  border: 2px solid #fe4918;
+  color: #fe4918;
 }
-
 nav.navegacion-principal a:last-child:hover {
-  color: hsla(360, 100%, 100%, 1);
+  color: #ffffff;
 }
-
-@media only screen and (min-width:768px) and (max-width:1800px) {
+@media only screen and (min-width:768px) {
   nav.navegacion-principal {
     width: 67%;
     float: right;
@@ -364,54 +365,47 @@ nav.navegacion-principal a:last-child:hover {
     display: block;
   }
   nav.navegacion-principal a {
-    margin-right: 10px;
-    padding: 5px 10px;
+    padding: 10px 10px;
     display: inline-block;
-    width: auto;
+    width:auto;
     display: inline-block;
     text-align: center;
-    margin: 0 10px 0 0;
+    margin:0 10px 0 0;
   }
 }
-
-/** Menu Movil*/
-
 div.menu-movil {
-  width: 60px;
-  display: block;
-  float: right;
-  text-align: right;
-  margin-top: 12px;
+    width: 60px;
+    display: block;
+    float: right;
+    text-align: right;
+    margin-top: 12px;
 }
 
 div.menu-movil:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-@media only screen and (min-width:768px) {
-  div.menu-movil {
-    display: none;
-  }
+@media only screen and (min-width: 768px) {
+    div.menu-movil {
+        display: none;
+    }
 }
 
-div.menu-movil span {
-  height: 8px;
-  margin-bottom: 6px;
-  background-color: white;
-  display: block;
+div.menu-movil span{
+    height: 8px;
+    margin-bottom: 6px;
+    background-color: white;
+    display: block; 
 }
 
-/**Talleres**/
-
+/** Talleres **/
 section.programa {
   position: relative;
 }
-
 div.contenedor-video {
   max-width: 100%;
   overflow-x: hidden;
 }
-
 div.contenido-programa {
   position: absolute;
   top: 0;
@@ -419,36 +413,31 @@ div.contenido-programa {
   height: 100%;
   width: 100%;
 }
-
 div.programa-evento {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, .8);
+  padding: 15px;
   margin-top: 80px;
 }
-
 @media only screen and (min-width:768px) {
-  div.programa-evento {
-    width: 70%;
-  }
+    div.programa-evento {
+        width: 70%;
+    }
 }
 
 @media only screen and (min-width:992px) {
-  div.programa-evento {
-    width: 50%;
-  }
+    div.programa-evento {
+        width: 50%;
+    }
 }
-
 nav.menu-programa {
   width: 100%;
-  border-bottom: 1px solid #fe4918;
-  padding-bottom: 10px;
+  
 }
-
 @media only screen and (min-width:768px) {
-  nav.menu-programa {
-    display: table;
-  }
+    nav.menu-programa {
+        display: table;
+    }
 }
-
 nav.menu-programa a {
   display: block;
   text-align: center;
@@ -457,73 +446,81 @@ nav.menu-programa a {
   font-family: 'Oswald', sans-serif;
   margin-bottom: 10px;
   font-size: 1.2em;
+  position: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fe4918;
 }
-
+nav.menu-programa a.activo::after {
+  position: absolute;
+  content: '';
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 20px;
+  width: 30px;
+  background-image: url('../img/talleres-flecha.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  bottom: -20px;
+}
 @media only screen and (min-width:768px) {
-  nav.menu-programa a {
-    display: table-cell;
-  }
+    nav.menu-programa a {
+      display: table-cell;
+    }
 }
-
-nav.menu-programa a i, div.detalle-evento p i {
+nav.menu-programa a i,
+div.detalle-evento p i {
   color: #fe4918;
-  font-size: 1.8em;
+  font-size: 1.6em;
   margin-right: 10px;
 }
-
-/**detalle evento**/
-
+div.ocultar {
+  display: none;
+}
+/**detalle evento **/
 div.detalle-evento {
   margin-top: 20px;
   border-bottom: 1px solid black;
   padding: 0 20px;
 }
-
-div.detalle-evento:nth-child(2) {
-  border: none;
+div.detalle-evento:nth-child(2){
+  border:none;
 }
-
 div.detalle-evento p {
   margin-bottom: 20px;
   font-size: 20px;
 }
-
-/**Lista Invitados**/
-
-ul.lista-invitados li {
+/* Invitados **/
+ul.lista-invitados li  {
   padding: 10px;
   float: left;
 }
 
-@media only screen and (min-width: 480px) {
-  ul.lista-invitados li {
+@media only screen and (min-width:480px) {
+  ul.lista-invitados li  {
     width: 50%;
   }
 }
-
-@media only screen and (min-width: 768px) {
-  ul.lista-invitados li {
+@media only screen and (min-width:768px) {
+  ul.lista-invitados li  {
     width: 33.3%;
   }
 }
-
 div.invitado {
   position: relative;
   overflow: hidden;
 }
-
 div.invitado img {
-  width: 100%;
-  filter: gray;
+  max-width: 100%;
+  filter:gray;
   -webkit-filter: grayscale(1);
   -webkit-transition: all .5s ease-in-out;
 }
-
 div.invitado:hover img {
   -webkit-filter: grayscale(0);
   -webkit-transform: scale(1.1);
 }
-
 div.invitado p {
   position: absolute;
   bottom: 0;
@@ -536,16 +533,12 @@ div.invitado p {
   font-family: 'Oswald', sans-serif;
   color: #fe4918;
   text-transform: uppercase;
-  -webkit-transition: all .7s ease-in-out;
+-webkit-transition: all .5s ease-in-out;
 }
-
 div.invitado:hover p {
   bottom: -80px;
   opacity: 0;
 }
-
-/**Contador**/
-
 .parallax::before {
   width: 100%;
   height: 100%;
@@ -554,27 +547,20 @@ div.invitado:hover p {
   left: 0;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  -webkit-filter: brightness(.8);
-  filter: brightness(.8);
 }
-
 div.contador {
   position: relative;
   height: auto;
 }
-
-div.contador::before {
+div.contador::before  {
   background-image: url(../img/bg-resumen.jpg);
-  content: '';
+  content:'';
 }
 
 ul.resumen-evento {
   position: relative;
   padding: 120px 0;
 }
-
 ul.resumen-evento li {
   width: 50%;
   float: left;
@@ -584,31 +570,26 @@ ul.resumen-evento li {
   font-family: 'Oswald', sans-serif;
   font-size: 24px;
 }
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px){
   ul.resumen-evento li {
-    width: 25%;
+      width: 25%; 
   }
 }
-
 p.numero {
   color: #fe4918;
   font-size: 4em;
   display: block;
-  margin-left: 0 0 10px 0;
+  margin: 0 0 10px 0;
   font-family: 'Oswald', sans-serif;
 }
-
-/*Tabla de precios*/
-
-ul.lista-precios>li {
+/** Tabla de Precios **/
+ul.lista-precios > li {
   padding: 10px;
 }
-
-@media only screen and (min-width:768px) {
-  ul.lista-precios>li {
-    float: left;
-    width: 33.3%;
+@media only screen and (min-width:768px){
+  ul.lista-precios > li {
+        float: left;
+        width: 33.3%;
   }
 }
 
@@ -619,25 +600,21 @@ div.tabla-precio {
   text-align: center;
   transition: all .3s ease;
 }
-
 div.tabla-precio:hover {
   transform: scale(1.1);
   border: 1px solid #fe4918;
   box-shadow: 0px 0px 50px #666;
 }
-
 div.tabla-precio ul li {
-  font-family: 'PT Sans', sans-serif;
-  font-size: 14px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  color: #868686;
-  line-height: 26px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #868686;
+    line-height: 26px;
 }
-
-div.tabla-precio ul li::before {
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
+div.tabla-precio ul li:before {
+  font-family: 'FontAwesome';
   display: inline-block;
   vertical-align: top;
   padding: 0 5px;
@@ -645,43 +622,37 @@ div.tabla-precio ul li::before {
   color: green;
   -webkit-font-smoothing: antialiased;
   content: '\f00c';
+  
 }
-
 div.tabla-precio h3 {
-  font-family: 'PT Sans', sans-serif;
-  font-size: 23px;
+  font-family: 'Oswald', sans-serif;
+  font-size:16px;
   text-transform: uppercase;
 }
-
 div.tabla-precio p.numero {
   color: #000000;
   margin: 20px 0;
 }
 
-/**Mapa**/
+/**+ MAPA   **/
 
 div.mapa {
   height: 420px;
   background-color: green;
 }
-
-/**testimoniales**/
-
+/**+ Testimoniales   **/
 div.testimoniales {
   padding-bottom: 20px;
 }
-
 div.testimonial {
   padding: 5px;
 }
-
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:768px){
   div.testimonial {
     float: left;
     width: 33.3%;
   }
 }
-
 blockquote {
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
@@ -689,55 +660,50 @@ blockquote {
   margin: 0 0 10px 0;
   padding-bottom: 20px;
 }
-
 blockquote p {
-  text-align: justify !important;
-  font-size: 1.2em !important;
+  text-align: justify!important;
+  font-size: 1em!important;    
   font-family: 'PT Sans', sans-serif;
   padding: 0 20px 0 65px;
 }
-
 blockquote p::before {
   content: '\201c';
   position: absolute;
   left: 13px;
-  top: -12px;
+  top: 8px;
   font-size: 8rem;
-  margin: 0;
-  padding: 0;
-  line-height: normal;
+  margin:0;
+  padding:0;
+  line-height: 1;
   color: #fe4918;
 }
-
 footer.info-testimonial {
   padding: 0;
+  background-color: transparent;
 }
-
 footer.info-testimonial img {
   float: left;
   width: 20%;
   border-radius: 50%;
   margin-left: 20px;
 }
-
 footer.info-testimonial cite {
-  text-align: left;
-  color: #fe4918;
+  text-align: left;    
+  color:#fe4918;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 12px;
   padding-top: 20px;
   width: 66.6%;
   float: right;
   font-weight: bold;
-  font-style: normal;
+  font-style:normal;
 }
-
 footer.info-testimonial cite span {
   color: #000000;
   display: block;
   text-transform: none;
+  margin-top: 5px;
 }
-
 /*** Newsletter:   **/
 div.newsletter {
   position: relative;
@@ -763,29 +729,331 @@ div.newsletter .contenido h3 {
   font-size: 7vw;
   font-family: 'PT Sans', sans-serif;
 }
-/*Cuenta regresiva*/
-
+/** Cuenta Regresiva**/
 div.cuenta-regresiva ul li {
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-align: center;
-
 }
 
+@media only screen and (min-width:768px){
+    div.cuenta-regresiva ul li {
+        width: 25%;
+        float: left;
+    }
+}
 
+/** Footer **/
 
+footer {
+  background-color: #353535;
+  padding-top: 40px;
+  margin-top: 20px;
+}
+footer .contenedor > div {
+  color: #ffffff;
+  padding: 0px 20px;
+  font-size: 12px;
+}
+@media only screen and (min-width:768px){
+  footer .contenedor > div {
+      width: 33.3%;
+      float: left;
+  }
+}
 
+footer h3 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 20px;
+}
+footer h3 span {
+  color: #fe4918;
+}
+footer .ultimos-tweets li {
+  margin-bottom: 10px;
+}
+footer nav.redes-sociales {
+  text-align: left;
+}
+p.copyright {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  padding: 10px 0;
+  margin:20px 0 0 0;
+  text-align: center;
+}
 
+/*** INTERNAS **/
+/* Conferencia **/
+.navegacion-principal .activo {
+  border-bottom: 2px solid #fe4918;
+}
+div.galeria a{
+  display: inline-block;
+  margin-bottom: 5px;
+}
+/* Registro **/
+form.registro h3 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0 0 0;
+}
+form.registro label {
+  margin-bottom: 5px;
+  font-weight: bold;    
+}
+h4 {
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 2px solid #fe4918;
+  padding-bottom: 10px;
+  font-size: 1.2em;
+}
+div.caja {
+  background-color: white;
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  margin: 10px;
+}
+div.campo {
+  padding: 20px;
+}
 
+@media only screen and (min-width:768px) {
+  div.campo {
+    float: left;
+    width: 33.3%;
+  }
+}
+div.paquetes .tabla-precio:hover {
+  transform: none;
+  box-shadow: none;
+}
+div.paquetes .tabla-precio input {
+  clear: both;    
+  width: 100px;
+  margin: 10px auto 0 auto;
+  display: block;
+}
 
+.contenido-dia {
+  padding: 20px;
+  display: none;
+}
+@media only screen and (min-width:768px) {
+  .contenido-dia > div {
+        float:left;
+        width: 33.3%;
+  }
+}
+.contenido-dia > div p {
+  text-align: left;
+}
+.contenido-dia > div label {
+  display: block;
+  margin-bottom: 10px;
+}
+.contenido-dia > div input {
+  margin-right: 10px;
+}
+.contenido-dia > div label time {
+  color: #fe4918;
+  font-weight: bold;
+}
+.contenido-dia .autor {
+    font-weight: bold;
+    font-family: arial,helvetica;
+    text-transform: uppercase;
+    font-size: 12px;
+}
 
+/* Resumen Registro */
 
+div.resumen p {
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
 
+div.resumen div.extras {
+  float: left;
+  width: 50%;
+  padding: 30px;
+}
+div.extras div.orden {
+    text-align: left;
+    margin-bottom: 10px;
+}
+div.extras div.orden input {
+  margin: 10px 0 0 0 ;    
+}
+div.resumen div.total {
+  float: right;
+  width: 50%;
+  padding: 30px;
+}
+div.resumen input {
+    display: block;
+    margin: 10px auto;
+}
+#lista-productos {
+  background-color: #e1e1e1;
+  padding: 20px;
+  display: none;
+}
+#suma-total {
+  text-align: center;
+  font-size: 2em;
+  color: #fe4918;
+}
+input[disabled].button {
+  opacity: .5;
+}
+#error {
+  clear: both;
+  padding: 20px;
+  text-align: center;
+  display: none;
+}
 
+/** Calendario **/
+div.calendario h3 {
+  background-color: #fe4918;
+  clear: both;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+div.calendario::after {
+  clear: both;
+  display: block;
+  content: '';    
+}
+div.dia {
+  width: 50%;
+  float: left;
+  border: 2px solid #e1e1e1;  
+  transition: all .3s ease; 
+}
+@media only screen and (min-width:768px) {
+  div.dia {
+    width: 33.3%;
+    min-height: 240px;
+    padding-top: 20px;
+  }
+}
+div.dia:hover {
+  background-color: #e1e1e1;
+  -webkit-transform: scale(1.1);
+}
+div.dia p.titulo {
+  color: #fe4918;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+div.dia p {
+  font-size: 1em;
+}
+div.dia i {
+  color: #fe4918;
+  font-size: 1.6em;
+}
+/* Colorbox **/
 
+div.cboxElement {
+  padding: 30px!important;
+  text-align: center;
+}
 
+/** Formularios **/
+.mensaje{
+  border:3px solid green;
+  padding:10px;
+  text-align: center;
+}
+.mensaje.error{
+  border:3px solid red;
+}
+form.login,
+form.invitado {
+  display: block;
+}
+@media only screen and (min-width:480px) {
+  form.login,
+  form.invitado {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width:768px) {
+  form.login,
 
+}
+@media only screen and (min-width:768px) {
+  form.invitado{
+    width: 60%;
+  }
+}
+form.login div.campo,
+form.invitado div.campo {
+  width: 100%;
+  float: none;
+  padding: 5px;
+}
+form.invitado input,
+form.invitado textarea {
+  width: 100%;
+  border:1px solid #cccccc;
+}
+form.invitado input[type="radio"] {
+  width: auto;
+}
+form.invitado div.campo {
+  margin-bottom: 10px;
+}
+form.invitado input#imagen {
+  border:none;
+}
+form.login label,
+form.invitado label {
+  width: 80px;
+  display: inline-block;
+}
+/** Admin **/
+section.admin nav {
+  padding: 20px;
+  background-color: #fe4918;
+  margin-bottom: 30px;
+}
+section.admin nav a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+}
+section.admin nav a:hover,
+#filtros a.activo {
+  border-bottom: 4px solid white;
+}
+
+/* TABLA REGISTRADOS */
+table td {
+  border: 1px solid #999999;
+  border-collapse: collapse;
+  padding: 20px;
+}
+table.registrados thead {
+  background-color: #353535;
+  color: white;
+}
+table.registrados thead th {
+  padding: 10px;
+}
+table.registrados tr:nth-child(4n),
+table.registrados tr:nth-child(4n-1) {
+  background-color: #dcdcdc;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -795,29 +1063,23 @@ div.cuenta-regresiva ul li {
  */
 
 .hidden {
-  display: none !important;
+    display: none !important;
 }
 
 /*
  * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 
 .visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
-  /* 1 */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 /*
@@ -826,14 +1088,14 @@ div.cuenta-regresiva ul li {
  * https://www.drupal.org/node/897638
  */
 
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-  white-space: inherit;
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
 }
 
 /*
@@ -841,7 +1103,7 @@ div.cuenta-regresiva ul li {
  */
 
 .invisible {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 /*
@@ -856,15 +1118,14 @@ div.cuenta-regresiva ul li {
  *    `:before` to contain the top-margins of child elements.
  */
 
-.clearfix:before, .clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
 
 .clearfix:after {
-  clear: both;
+    clear: both;
 }
 
 /* ==========================================================================
@@ -874,66 +1135,91 @@ div.cuenta-regresiva ul li {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+    /* Style adjustments for viewports that meet the condition */
 }
 
-@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
+   http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
 @media print {
-  *, *:before, *:after {
-    background: transparent !important;
-    color: #000 !important;
-    /* Black prints faster */
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  a, a:visited {
-    text-decoration: underline;
-  }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-  /*
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-  a[href^="#"]:after, a[href^="javascript:"]:after {
-    content: "";
-  }
-  pre {
-    white-space: pre-wrap !important;
-  }
-  pre, blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  /*
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-  thead {
-    display: table-header-group;
-  }
-  tr, img {
-    page-break-inside: avoid;
-  }
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2, h3 {
-    page-break-after: avoid;
-  }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }

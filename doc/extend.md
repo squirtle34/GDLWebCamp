@@ -22,10 +22,23 @@ not everything fits with everyone's needs.
 
 ## App Stores
 
+### Install a Chrome Web Store app
+
+Users can install a Chrome app directly from your website, as long as
+the app and site have been associated via Google's Webmaster Tools.
+Read more on [Chrome Web Store's Inline Installation
+docs](https://developer.chrome.com/webstore/inline_installation).
+
+```html
+<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/APP_ID">
+```
+
 ### Smart App Banners in iOS 6+ Safari
 
 Stop bothering everyone with gross modals advertising your entry in the
-App Store. Including the following [meta tag](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html) will unobtrusively give the user the option to download your iOS app,or open it with some data about the user's current state on the website.
+App Store. Include the following [meta tag](https://developer.apple.com/library/IOS/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html#//apple_ref/doc/uid/TP40002051-CH6-SW2)
+will unintrusively allow the user the option to download your iOS app,
+or open it with some data about the user's current state on the website.
 
 ```html
 <meta name="apple-itunes-app" content="app-id=APP_ID,app-argument=SOME_TEXT">
@@ -108,7 +121,7 @@ Microsoft Ajax Content Delivery Network:
 
 * https://developer.mozilla.org/en-US/docs/Controlling_DNS_prefetching
 * https://dev.chromium.org/developers/design-documents/dns-prefetching
-* https://blogs.msdn.microsoft.com/ie/2011/03/17/internet-explorer-9-network-performance-improvements/
+* http://blogs.msdn.com/b/ie/archive/2011/03/17/internet-explorer-9-network-performance-improvements.aspx
 * http://dayofjs.com/videos/22158462/web-browsers_alex-russel
 
 
@@ -148,14 +161,14 @@ ga('send', 'pageview');
 ### Track jQuery AJAX requests in Google Analytics
 
 An article by @JangoSteve explains how to [track jQuery AJAX requests in Google
-Analytics](https://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/).
+Analytics](http://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/).
 
 Add this to `plugins.js`:
 
 ```js
 /*
  * Log all jQuery AJAX requests to Google Analytics
- * See: https://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/
+ * See: http://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/
  */
 if (typeof ga !== "undefined" && ga !== null) {
     $(document).ajaxSend(function(event, xhr, settings){
@@ -215,6 +228,28 @@ $(function(){
 
 ## Internet Explorer
 
+### Prompt users to switch to "Desktop Mode" in IE10 Metro
+
+IE10 does not support plugins, such as Flash, in Metro mode. If
+your site requires plugins, you can let users know that via the
+`x-ua-compatible` meta element, which will prompt them to switch
+to Desktop Mode.
+
+```html
+<meta http-equiv="x-ua-compatible" content="requiresActiveX=true">
+```
+
+Here's what it looks like alongside H5BP's default `x-ua-compatible`
+values:
+
+```html
+<meta http-equiv="x-ua-compatible" content="ie=edge,requiresActiveX=true">
+```
+
+You can find more information in [Microsoft's IEBlog post about prompting for
+plugin use in IE10 Metro
+Mode](http://blogs.msdn.com/b/ie/archive/2012/01/31/web-sites-and-a-plug-in-free-web.aspx).
+
 ### IE Pinned Sites (IE9+)
 
 Enabling your application for pinning will allow IE9 users to add it to their
@@ -245,10 +280,10 @@ mouse over your Pinned Site's icon.
 If the site should go to a specific URL when it is pinned (such as the
 homepage), enter it here. One idea is to send it to a special URL so you can
 track the number of pinned users, like so:
-`https://www.example.com/index.html?pinned=true`
+`http://www.example.com/index.html?pinned=true`
 
 ```html
-<meta name="msapplication-starturl" content="https://www.example.com/index.html?pinned=true">
+<meta name="msapplication-starturl" content="http://www.example.com/index.html?pinned=true">
 ```
 
 ### Recolor IE's controls manually for a Pinned Site
@@ -287,7 +322,7 @@ need.
 
 Windows 8 adds the ability for you to provide a PNG tile image and specify the
 tile's background color. [Full details on the IE
-blog](https://blogs.msdn.microsoft.com/ie/2012/06/08/high-quality-visuals-for-pinned-sites-in-windows-8/).
+blog](http://blogs.msdn.com/b/ie/archive/2012/06/08/high-quality-visuals-for-pinned-sites-in-windows-8.aspx).
 
 * Create a 144x144 image of your site icon, filling all of the canvas, and
   using a transparent background.
@@ -303,16 +338,16 @@ tile in the Start screen. The user will be able to receive these badge updates
 even when your app isn't actively running. The badge's value can be a number,
 or one of a predefined list of glyphs.
 
-* [Tutorial on IEBlog with link to badge XML schema](https://blogs.msdn.microsoft.com/ie/2012/04/03/pinned-sites-in-windows-8/)
+* [Tutorial on IEBlog with link to badge XML schema](http://blogs.msdn.com/b/ie/archive/2012/04/03/pinned-sites-in-windows-8.aspx)
 * [Available badge values](https://msdn.microsoft.com/en-us/library/ie/br212849.aspx)
 
 ```html
-<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=https://www.example.com/path/to/file.xml">
+<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=http://www.example.com/path/to/file.xml">
 ```
 
 ### Disable link highlighting upon tap in IE10
 
-Similar to [-webkit-tap-highlight-color](https://davidwalsh.name/mobile-highlight-color)
+Similar to [-webkit-tap-highlight-color](http://davidwalsh.name/mobile-highlight-color)
 in iOS Safari. Unlike that CSS property, this is an HTML meta element, and its
 value is boolean rather than a color. It's all or nothing.
 
@@ -327,17 +362,10 @@ You can read about this useful element and more techniques in
 
 ### Direct search spiders to your sitemap
 
-After creating a [sitemap](https://www.sitemaps.org/protocol.html)
+[Learn how to make a sitemap](http://www.sitemaps.org/protocol.html)
 
-Submit it to search engine tool:
-* [Google](https://www.google.com/webmasters/tools/sitemap-list)
-* [Bing](https://www.bing.com/toolbox/webmaster)
-* [Yandex](https://webmaster.yandex.com/)
-* [Baidu](https://zhanzhang.baidu.com/)
-OR
-Insert the following line anywhere in your robots.txt file, specifying the path to your sitemap:
-```
-Sitemap: https://example.com/sitemap_location.xml
+```html
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 ```
 
 ### Hide pages from search engines
@@ -371,7 +399,7 @@ plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plug
 * Use [Microformats](http://microformats.org/wiki/Main_Page) (via
   [microdata](http://microformats.org/wiki/microdata)) for optimum search
   results
-  [visibility](https://webmasters.googleblog.com/2009/05/introducing-rich-snippets.html).
+  [visibility](http://googlewebmastercentral.blogspot.com/2009/05/introducing-rich-snippets.html).
 
 * If you're building a web app you may want [native style momentum scrolling in
   iOS 5+](http://www.johanbrook.com/articles/native-style-momentum-scrolling-to-arrive-in-ios-5/)
@@ -391,6 +419,10 @@ plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plug
   page) by [implementing X-Robots-tag
   headers](https://github.com/h5bp/html5-boilerplate/issues/804).
 
+* Screen readers currently have less-than-stellar support for HTML5 but the JS
+  script [accessifyhtml5.js](https://github.com/yatil/accessifyhtml5.js) can
+  help increase accessibility by adding ARIA roles to HTML5 elements.
+
 
 ## News Feeds
 
@@ -407,7 +439,7 @@ scratch](http://www.rssboard.org/rss-specification)?
 
 Atom is similar to RSS, and you might prefer to use it instead of or in
 addition to it. [See what Atom's all
-about](https://en.wikipedia.org/wiki/Atom_(Web_standard)).
+about](http://www.atomenabled.org/developers/syndication/).
 
 ```html
 <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
@@ -441,21 +473,10 @@ Take full advantage of Facebook's support for complex data and activity by
 following the [Open Graph
 tutorial](https://developers.facebook.com/docs/opengraph/tutorial/).
 
-For a reference of Open Graph's markup and properties, you may check
-[Facebook's Open Graph Protocol reference](http://ogp.me/). Finally,
-you can validate your markup with the [Facebook Object
-Debugger](https://developers.facebook.com/tools/debug/) (needs
-registration to Facebook).
-
 ```html
-<meta property="fb:app_id" content="123456789">
-<meta property="og:url" content="https://www.example.com/path/to/page.html">
-<meta property="og:type" content="website">
 <meta property="og:title" content="">
-<meta property="og:image" content="https://www.example.com/path/to/image.jpg">
 <meta property="og:description" content="">
-<meta property="og:site_name" content="">
-<meta property="article:author" content="">
+<meta property="og:image" content="">
 ```
 
 ### Twitter Cards
@@ -465,46 +486,18 @@ Graph. In fact, Twitter will use Open Graph when Cards is not available. Note
 that, as of this writing, Twitter requires that app developers activate Cards
 on a per-domain basis. You can read more about the various snippet formats
 and application process in the [official Twitter Cards
-documentation](https://dev.twitter.com/docs/cards), and you can validate
-your markup with the [Card validator](https://cards-dev.twitter.com/validator)
-(needs registration to Twitter).
+documentation](https://dev.twitter.com/docs/cards).
 
 ```html
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@site_account">
 <meta name="twitter:creator" content="@individual_account">
-<meta name="twitter:url" content="https://www.example.com/path/to/page.html">
+<meta name="twitter:url" content="http://www.example.com/path/to/page.html">
 <meta name="twitter:title" content="">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://www.example.com/path/to/image.jpg">
+<meta name="twitter:image" content="http://www.example.com/path/to/image.jpg">
 ```
 
-### Google+ / Schema.org
-
-Google also provides a snippet specification that serves a similar
-purpose to Facebook's Open Graph or Twitter Cards. While it helps you
-to control information displayed on Google+, this metadata is a subset
-of [schema.org's microdata vocabulary](https://schema.org/), which
-covers many other schemas that can describe the content of your pages
-to search engines. For this reason, this metadata is more generic for
-SEO, notably for Google's search-engine, although this vocabulary is
-also used by Microsoft, Pinterest or Yandex.
-
-You can validate your markup with the [Structured Data Testing
-Tool](https://developers.google.com/structured-data/testing-tool/).
-Also, please note that this markup requires to add attributes to your
-top `html` tag.
-
-```html
-<html class="no-js" lang="" itemscope itemtype="http://schema.org/Article">
-    <head>
-
-        <link rel="author" href="">
-        <link rel="publisher" href="">
-        <meta itemprop="name" content="">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="">
-```
 
 ## URLs
 
@@ -512,8 +505,8 @@ top `html` tag.
 
 Signal to search engines and others "Use this URL for this page!" Useful when
 parameters after a `#` or `?` is used to control the display state of a page.
-`https://www.example.com/cart.html?shopping-cart-open=true` can be indexed as
-the cleaner, more accurate `https://www.example.com/cart.html`.
+`http://www.example.com/cart.html?shopping-cart-open=true` can be indexed as
+the cleaner, more accurate `http://www.example.com/cart.html`.
 
 ```html
 <link rel="canonical" href="">
@@ -540,12 +533,12 @@ This can be done by adding the following annotations in your HTML pages:
 * on the desktop page, add the `link rel="alternate"` tag pointing to the
   corresponding mobile URL, e.g.:
 
-  `<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.example.com/page.html" >`
+  `<link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.example.com/page.html" >`
 
 * on the mobile page, add the `link rel="canonical"` tag pointing to the
   corresponding desktop URL, e.g.:
 
-  `<link rel="canonical" href="https://www.example.com/page.html">`
+  `<link rel="canonical" href="http://www.example.com/page.html">`
 
 For more information please see:
 
@@ -562,7 +555,7 @@ added to the Home Screen on iOS:
 provide the default iOS app view. You can control the color scheme of the
 default view by adding `apple-mobile-web-app-status-bar-style`.
 
-```html
+  ```html
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 ```
@@ -570,7 +563,7 @@ default view by adding `apple-mobile-web-app-status-bar-style`.
 * You can use `apple-mobile-web-app-title` to add a specific sites name for the
 Home Screen icon. This works since iOS 6.
 
-```html
+  ```html
 <meta name="apple-mobile-web-app-title" content="">
 ```
 
@@ -603,11 +596,11 @@ Displays meaning:
 More information about the displays of iOS devices can be found
 [here](https://en.wikipedia.org/wiki/List_of_iOS_devices#Display).
 
-In most cases, one `180×180px` touch icon named `icon.png`
+In most cases, one `180×180px` touch icon named `apple-touch-icon.png`
 and including:
 
 ```html
-<link rel="apple-touch-icon" href="icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 ```
 
 in the `<head>` of the page is enough. If you use art-direction and/or
@@ -654,7 +647,7 @@ Same applies to the touch icons:
 
 ### Theme Color
 
-You can add the [`theme-color` meta extension](https://html.spec.whatwg.org/multipage/semantics.html#meta-theme-color)
+You can add the [`theme-color` meta extension](https://github.com/whatwg/meta-theme-color)
 in the `<head>` of your pages to suggest the color that browsers and
 OSes should use if they customize the display of individual pages in
 their UIs with varying colors.
@@ -666,4 +659,5 @@ their UIs with varying colors.
 The `content` attribute extension can take any valid CSS color.
 
 Currently, the `theme-color` meta extension is supported by [Chrome 39+
-for Android Lollipop](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android).
+for Android Lollipop](http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android)
+and [Firefox OS 2.1+](https://twitter.com/ahmednefzaoui/status/492344698493997057).
